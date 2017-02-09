@@ -6,7 +6,7 @@
 /*   By: vpopovyc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 15:51:56 by vpopovyc          #+#    #+#             */
-/*   Updated: 2017/02/09 17:08:37 by vpopovyc         ###   ########.fr       */
+/*   Updated: 2017/02/09 20:44:21 by vpopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_parse(int fd, t_fdf *sp);
 
 /* TO DO
  * ok, buss stoped in ft_parse.c
- * ft_loop – norm error
+ * ft_merge – need to be done
  * use brains
  * ft_parse – needs to be ended
  * sometimes ...
