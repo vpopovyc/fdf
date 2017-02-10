@@ -6,7 +6,7 @@
 /*   By: vpopovyc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 15:51:56 by vpopovyc          #+#    #+#             */
-/*   Updated: 2017/02/09 20:44:21 by vpopovyc         ###   ########.fr       */
+/*   Updated: 2017/02/10 15:04:07 by vpopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_parse(int fd, t_fdf *sp);
 /* TO DO
  * ok, buss stoped in ft_parse.c
  * ft_merge – need to be done
+ * ft_atoi_base – done!
  * use brains
  * ft_parse – needs to be ended
  * sometimes ...
