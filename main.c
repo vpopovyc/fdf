@@ -14,16 +14,22 @@
 
 int		main(int ac, char **av)
 {
-	t_fdf	*sp;
+	t_root	root;
 
 	if (ac == 2)
 	{
-		sp = NULL;
-		if (ft_parse(open(*(++av), O_RDONLY), &sp))                   /* here could be segfault */
-		{
-			printf("x: %i\ny: %i\nz: %i\ncolor: %s\n", sp->c_x, sp->c_y, sp->c_z, sp->color);
+        ft_get_root(0, 1, &root);
+        if (ft_parse(open(*(++av), O_RDONLY), &root))
+        {
+            if ((root.status ^ 0x2) & 0x40)
+                exit(ft_printf("Invalid matrix\n"));
+            if ((root.status ^ 0x40) & 0x2)
+            {
+                ft_diagonal(&root);
+                printf("added diagonal connection\n");
+            }
 			return (printf("return: validated\n"));
-		}
+        }
 	}
 	return (printf("return: main\n"));
 }
