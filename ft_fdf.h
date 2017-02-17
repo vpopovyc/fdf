@@ -41,6 +41,7 @@ void	ft_mod_cord(t_fdf *node, int x, int y, int z);
 t_fdf	*ft_new_node(int x, int y, int z, int color);
 void	ft_get_root(int def_color, int err_color, t_root *new);
 /* ft_parse */
+void	ft_diagonal(t_root *root);
 void    ft_color(t_root *root, char **line, t_fdf **node);
 t_fdf	*ft_loop(char *line, int n, t_root *root);
 void	ft_merge(t_fdf **up, t_fdf **down);
@@ -50,6 +51,7 @@ int		ft_parse(int fd, t_root *root);
 
 /* TO DO
  * almost done parsing and validating
- * hehehe, fix reversed color saving :)
+ * fix reversed color saving
+ * look in t.c file examples of using minilibx
  * use brains sometimes ...
  */
