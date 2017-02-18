@@ -12,6 +12,23 @@
 
 #include "ft_fdf.h"
 
+void		ft_merge(t_fdf **up, t_fdf **down)
+{
+    t_fdf	*head;
+    t_fdf	*tail;
+    
+    head = *up;
+    tail = *down;
+    while (*up)
+    {
+        (*up)->down = *down;
+        *up = (*up)->right;
+        *down = (*down)->right;
+    }
+    *up = head;
+    *down = tail;
+}
+
 void	ft_mod_cord(t_fdf *node, int x, int y, int z)
 {
 	node->c_x = x;
@@ -26,6 +43,8 @@ void    ft_get_root(int def_color, int err_color, t_root *new)
     new->head = NULL;
     new->matrix_size = 0;
     new->status = 0;
+	new->w_h = 400;
+	new->w_w = 400;
 }
 
 t_fdf	*ft_new_node(int y, int x, int z, int color)

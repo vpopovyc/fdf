@@ -36,6 +36,7 @@ void		ft_diagonal(t_root *root)
 		second = tmp_s;
 		second = second->down;
 	}
+	ft_printf("added diagonal connection\n"); /* don't forget to delete */
 }
 
 void		ft_spc(size_t *x, char *f, t_fdf **head, t_fdf **node)
@@ -74,9 +75,11 @@ void        ft_color(t_root *root, char **line, t_fdf **node)
         *line += 2;
         hex_len = (int)ft_chexlen(*line);
         tmp = hex_len;
+		*line += hex_len;
         while (--hex_len >= 0)
-            pt[--nb] = *((*line)++);
+            pt[--nb] = *(--(*line));
         (*node)->color = ft_atoi_base(pt, 16);
+		*line += tmp;
     }
     else
         (*node)->color = root->err_color;
@@ -95,7 +98,7 @@ t_fdf		*ft_loop(char *line, int n, t_root *root)
 	head = NULL;
 	while (*line != '\0' && (n == 0 || (n > 0 && x < root->matrix_size)))
 	{
-		if (ft_isdigit(*line)  && !f && node == NULL)
+		if ((ft_isdigit(*line) || ft_issign(*line)) && !f && node == NULL)
 		{
 			node = ft_new_node(n, (int)x, ft_atoi(line), root->def_color);
 			f |= 0x1;
@@ -110,23 +113,6 @@ t_fdf		*ft_loop(char *line, int n, t_root *root)
 	return (head);
 }
 
-void		ft_merge(t_fdf **up, t_fdf **down)
-{
-	t_fdf	*head;
-	t_fdf	*tail;
-	
-	head = *up;
-	tail = *down;
-	while (*up)
-	{
-		(*up)->down = *down;
-		*up = (*up)->right;
-		*down = (*down)->right;
-	}
-	*up = head;
-	*down = tail;
-}
-
 int			ft_parse(int	fd, t_root *root)
 {
 	char	*line;
@@ -136,12 +122,15 @@ int			ft_parse(int	fd, t_root *root)
 
 	n = -1;
 	line = NULL;
-	get_next_line(fd, &line);
+	if (get_next_line(fd, &line) <= 0)
+		return (root->status |= 0x80);
 	root->head = ft_loop(line, ++n, root);
     up = root->head;
 	while (get_next_line(fd, &line) > 0)
 	{
 		down = ft_loop(line, ++n, root);
+		if (root->status & 0x40)
+			exit(ft_printf("Invalid matrix\n"));
 		ft_merge(&up, &down);
 		up = down;
 		free(line);

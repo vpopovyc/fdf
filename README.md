@@ -5,6 +5,16 @@ You will also discover your first graphic library: miniLibX. This library was de
 
 http://thomas.tissotdupont.free.fr/MinilibX%20Manual/mlx_window_create.html
 
+ - Bresenham's visualizer's
+https://www.cs.drexel.edu/~introcs/Fa11/notes/08.3_MoreGraphics/Bresenham.html?CurrentSlide=4
+http://bert.stuy.edu/pbrooks/graphics/demos/BresenhamDemo.htm
+http://members.chello.at/easyfilter/colorconverter.html
+
+ - Anti-Alising
+https://en.wikipedia.org/wiki/Xiaolin_Wu's_line_algorithm
+http://archive.gamedev.net/archive/reference/articles/article382.html
+https://habrahabr.ru/post/185086/
+
 /* how to install minilibx on macos Sierra */
 
 	 if not istalled, install XQartz – https://www.xquartz.org

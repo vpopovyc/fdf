@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		973185521E5886230057E60B /* ft_issign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_issign.c; path = libft/ft_issign.c; sourceTree = "<group>"; };
 		97797A871E56FF18005F95C0 /* format.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = format.c; path = libft/format.c; sourceTree = "<group>"; };
 		97797A881E56FF18005F95C0 /* ft_atoi_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_atoi_base.c; path = libft/ft_atoi_base.c; sourceTree = "<group>"; };
 		97797A891E56FF18005F95C0 /* ft_atoi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_atoi.c; path = libft/ft_atoi.c; sourceTree = "<group>"; };
@@ -128,12 +129,12 @@
 		97797B441E56FF2D005F95C0 /* get_next_line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = get_next_line.h; path = libft/includes/get_next_line.h; sourceTree = "<group>"; };
 		97797B451E56FF2D005F95C0 /* libft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libft.h; path = libft/includes/libft.h; sourceTree = "<group>"; };
 		97797B481E56FF45005F95C0 /* libft.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libft.a; path = libft/libft.a; sourceTree = "<group>"; };
-		97797B511E56FFC3005F95C0 /* libmlx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmlx.a; path = minilibx/libmlx.a; sourceTree = "<group>"; };
+		97797B511E56FFC3005F95C0 /* libmlx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmlx.a; path = minilibx/libmlx.a; sourceTree = SOURCE_ROOT; };
 		97797B531E56FFD3005F95C0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		97797B551E56FFDD005F95C0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		97797B5A1E57002D005F95C0 /* mlx_int.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlx_int.h; path = minilibx/mlx_int.h; sourceTree = "<group>"; };
 		97797B5B1E57002D005F95C0 /* mlx_new_window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlx_new_window.h; path = minilibx/mlx_new_window.h; sourceTree = "<group>"; };
-		97797B5C1E57002D005F95C0 /* mlx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlx.h; path = minilibx/mlx.h; sourceTree = "<group>"; };
+		97797B5C1E57002D005F95C0 /* mlx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlx.h; path = minilibx/mlx.h; sourceTree = SOURCE_ROOT; };
 		97797B5D1E570042005F95C0 /* font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = font.c; path = minilibx/font.c; sourceTree = "<group>"; };
 		97797B5E1E570042005F95C0 /* mlx_init_loop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mlx_init_loop.m; path = minilibx/mlx_init_loop.m; sourceTree = "<group>"; };
 		97797B5F1E570042005F95C0 /* mlx_int_str_to_wordtab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mlx_int_str_to_wordtab.c; path = minilibx/mlx_int_str_to_wordtab.c; sourceTree = "<group>"; };
@@ -143,12 +144,12 @@
 		97797B631E570042005F95C0 /* mlx_shaders.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mlx_shaders.c; path = minilibx/mlx_shaders.c; sourceTree = "<group>"; };
 		97797B641E570042005F95C0 /* mlx_xpm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mlx_xpm.c; path = minilibx/mlx_xpm.c; sourceTree = "<group>"; };
 		97829C5F1E5084E500590DD2 /* fdf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fdf; sourceTree = BUILT_PRODUCTS_DIR; };
-		97829C6A1E5085CD00590DD2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		97829C6A1E5085CD00590DD2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; usesTabs = 1; };
 		97829C6C1E5085F300590DD2 /* ft_parse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ft_parse.c; sourceTree = "<group>"; usesTabs = 1; };
-		97829C6D1E5085F300590DD2 /* ft_s_fdf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ft_s_fdf.c; sourceTree = "<group>"; };
+		97829C6D1E5085F300590DD2 /* ft_s_fdf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ft_s_fdf.c; sourceTree = "<group>"; usesTabs = 1; };
 		97829D341E50875F00590DD2 /* ft_fdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ft_fdf.h; sourceTree = "<group>"; usesTabs = 1; };
 		97829D351E508A2700590DD2 /* toto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toto.txt; sourceTree = "<group>"; };
-		97F58D621E56634600D0CB72 /* ft_init_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_init_image.c; sourceTree = "<group>"; };
+		97F58D621E56634600D0CB72 /* ft_init_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_init_image.c; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				97797A871E56FF18005F95C0 /* format.c */,
+				973185521E5886230057E60B /* ft_issign.c */,
 				97797A881E56FF18005F95C0 /* ft_atoi_base.c */,
 				97797A891E56FF18005F95C0 /* ft_atoi.c */,
 				97797A8A1E56FF18005F95C0 /* ft_atosize_t.c */,

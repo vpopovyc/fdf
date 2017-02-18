@@ -18,18 +18,16 @@ int		main(int ac, char **av)
 
 	if (ac == 2)
 	{
-        ft_get_root(0, 1, &root);
-        if (ft_parse(open(*(++av), O_RDONLY), &root))
-        {
-            if ((root.status ^ 0x2) & 0x40)
-                exit(ft_printf("Invalid matrix\n"));
-            if ((root.status ^ 0x40) & 0x2)
-            {
-                ft_diagonal(&root);
-                printf("added diagonal connection\n");
-            }
-			return (printf("return: validated\n"));
-        }
+		ft_get_root(0, 1, &root);
+		if (ft_parse(open(*(++av), O_RDONLY), &root))
+		{
+			if (root.status & 0x80)
+				exit(ft_printf("Empty file\n"));
+			if (root.status & 0x2)
+				ft_diagonal(&root);
+			ft_printf("return: validated\n");
+		}
+		ft_init_image(&root);
 	}
-	return (printf("return: main\n"));
+	return (ft_printf("return: main\n"));
 }
