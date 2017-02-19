@@ -21,6 +21,10 @@ http://archive.gamedev.net/archive/reference/articles/article382.html
 
 https://habrahabr.ru/post/185086/
 
+- Gradient 
+
+http://www.tigir.com/fade.htm
+
 /* how to install minilibx on macos Sierra */
 
 	 if not istalled, install XQartz – https://www.xquartz.org
