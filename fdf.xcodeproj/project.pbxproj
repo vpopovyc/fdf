@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974A47B21E59EEE600F9308D /* ft_drawAAline.c in Sources */ = {isa = PBXBuildFile; fileRef = 974A47B11E59EEE600F9308D /* ft_drawAAline.c */; };
 		97797B4B1E56FF7C005F95C0 /* ft_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 97829C6C1E5085F300590DD2 /* ft_parse.c */; };
 		97797B4C1E56FF7C005F95C0 /* ft_s_fdf.c in Sources */ = {isa = PBXBuildFile; fileRef = 97829C6D1E5085F300590DD2 /* ft_s_fdf.c */; };
 		97797B4D1E56FF7C005F95C0 /* ft_init_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 97F58D621E56634600D0CB72 /* ft_init_image.c */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		973185521E5886230057E60B /* ft_issign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_issign.c; path = libft/ft_issign.c; sourceTree = "<group>"; };
+		974A47B11E59EEE600F9308D /* ft_drawAAline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_drawAAline.c; sourceTree = "<group>"; };
 		97797A871E56FF18005F95C0 /* format.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = format.c; path = libft/format.c; sourceTree = "<group>"; };
 		97797A881E56FF18005F95C0 /* ft_atoi_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_atoi_base.c; path = libft/ft_atoi_base.c; sourceTree = "<group>"; };
 		97797A891E56FF18005F95C0 /* ft_atoi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_atoi.c; path = libft/ft_atoi.c; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				97829D351E508A2700590DD2 /* toto.txt */,
+				974A47B11E59EEE600F9308D /* ft_drawAAline.c */,
 				97829D341E50875F00590DD2 /* ft_fdf.h */,
 				97829C6C1E5085F300590DD2 /* ft_parse.c */,
 				97829C6D1E5085F300590DD2 /* ft_s_fdf.c */,
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974A47B21E59EEE600F9308D /* ft_drawAAline.c in Sources */,
 				97797B4B1E56FF7C005F95C0 /* ft_parse.c in Sources */,
 				97797B4C1E56FF7C005F95C0 /* ft_s_fdf.c in Sources */,
 				97797B4D1E56FF7C005F95C0 /* ft_init_image.c in Sources */,

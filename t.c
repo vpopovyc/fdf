@@ -34,13 +34,47 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
     *data += (y * sl) + (x * 4);
 }
 
-/* Xiaolin Wu's line algo
- void    ft_change_data(char **data, int sl)
- {
+int		ft_get_color(int c0, int c1, int n, int x)
+{
+	unsigned char	b1_b = c0;
+	unsigned char	b1_g = c0 >> 8;
+	unsigned char	b1_r= c0 >> 16;
+	printf("b1_0: %i\n", b1_b);
+	printf("b1_1: %i\n", b1_g);
+	printf("b1_2: %i\n", b1_r);
+	unsigned char	b2_b = c1;
+	unsigned char	b2_g = c1 >> 8;
+	unsigned char	b2_r = c1 >> 16;
+	printf("* b2_0: %i\n", b2_b);
+	printf("* b2_1: %i\n", b2_g);
+	printf("* b2_2: %i\n", b2_r);
+	unsigned char	b3_b = (b1_b - (b1_b - b2_b) * n / x);
+	unsigned char	b3_g = (b1_g - (b1_g - b2_g) * n / x);
+	unsigned char	b3_r = (b1_r - (b1_r - b2_r) * n / x);
+	printf("b3_0: %i\n", b3_b);
+	printf("b3_1: %i\n", b3_g);
+	printf("b3_2: %i\n", b3_r);
+	
+	int		res = 0;
+	res += b3_b;
+	res += (int)(b3_g << 8);
+	res += (int)(b3_r << 16);
+	/*res |= (res << 8 | b3_r); 
+	res |= (res << 16 | b3_g);
+	res |= (res << 24 | b3_b);*/
+	printf ("res in hex %x\n\n\n\n", res);
+	return (res);
+}
+
+/* Xiaolin Wu's line algo */
+void    ft_change_data(char **data, int sl)
+{
+	int color_0 = 0xffffff;
+	int	color_1 = 0x000000;
     int x0 = 1;
     int y0 = 1;
     int x1 = 200;
-    int y1 = 200;
+    int y1 = 300;
     int sx = x0 < x1 ? 1 : -1;
     int sy = y0 < y1 ? 1 : -1;
     int     dx = abs(x1 - x0);
@@ -48,14 +82,17 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
     int     err = dx - dy;
     int     t_err;
     int     x2;
-    int     ed = dx + dy == 0 ? 1 : sqrt((float)dx * dx + (float)dy * dy);
+    int     ed = dx + dy == 0 ? 1 : sqrtf(pow(dx, 2) + pow(dy, 2));
     char    *tmp = *data;
- 
+	int change = ft_get_color(color_0, color_1, x0, x1);
+	int n = 1;
+	
     while (x0 <= x1 || y0 <= y1)
     {
+		change = ft_get_color(color_0, color_1, x0, x1);
         *data = tmp;
         ft_get_pixel_pos(x0, y0, data, sl);
-        ft_i_put_pixel(data, 16777215, 255*abs(err - dx + dy) / ed);
+        ft_i_put_pixel(data, change, 255*abs(err - dx + dy) / ed);
         t_err = err;
         x2 = x0;
         if (2 * t_err >= -dx)
@@ -64,7 +101,7 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
             {
                 *data = tmp;
                 ft_get_pixel_pos(x0, y0 + sy, data, sl);
-                ft_i_put_pixel(data, 16777215, 255*(t_err + dy) / ed);
+                ft_i_put_pixel(data, change, 255*(t_err + dy) / ed);
             }
             err -= dy;
             x0 += sx;
@@ -75,14 +112,14 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
             {
                 *data = tmp;
                 ft_get_pixel_pos(x2 + sx, y0, data, sl);
-                ft_i_put_pixel(data, 16777215, 255*(dx - t_err) / ed);
+                ft_i_put_pixel(data, change, 255*(dx - t_err) / ed);
             }
             err += dx;
             y0 += sy;
         }
     }
 }
-*/
+
 
 /*   alised Bresenham's algo
 void    ft_change_data(char **data, int sl)
@@ -90,7 +127,7 @@ void    ft_change_data(char **data, int sl)
     int x0 = 1;
     int y0 = 1;
     int x1 = 8;
-    int y1 = 5;
+    int y1 = 150;
     int sx = x0 < x1 ? 1 : -1;
     int sy = y0 < y1 ? 1 : -1;
     int     dx = abs(x1 - x0);

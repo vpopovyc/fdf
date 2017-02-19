@@ -27,7 +27,7 @@ typedef	struct		s_fdf
 	struct s_fdf	*down;
 }					t_fdf;
 
-typedef struct		s_root
+typedef	 struct		s_root
 {
 	int				def_color;
 	int				err_color;
@@ -37,18 +37,40 @@ typedef struct		s_root
 	void			*win;
 	void			*img;
 	char			*i_data;
-	int				sl;
+	int				size_line;
 	int				w_h;
 	int				w_w;
 	struct s_fdf	*head;
 }					t_root;
+
+typedef	 struct		s_ld
+{
+	int		x0;
+	int		x1;
+	int		y0;
+	int		y1;
+	int		sx;
+	int		sy;
+	int		dx;
+	int		dy;
+	int		de;
+	int		err;
+	int		t_err;
+	int		t_x0;
+	char	*t_i_data;
+}					t_ld;
 
 # define BS 8
 /* ft_init_image.c */
 int		ft_image(t_root *root);
 int		ft_init_image(t_root *root);
 int		ft_key_hook(int keycode, t_root *root);
-void    ft_i_put_pixel(char **data, int color, unsigned char opacity);
+/* ft_drawAAline.c */
+/*void	ft_i_put_pixel(t_root *root, int color, unsigned char opacity);
+void	ft_get_pixel_pos(int x, int y, t_root *root);
+void	ft_x_move(t_root *root, t_ld *ld);
+void	ft_y_move(t_root *root, t_ld *ld);
+void	ft_change_data(t_root *root, t_fdf *p_start, t_fdf *p_end);*/
 /* ft_s_fdf.c */
 void	ft_mod_cord(t_fdf *node, int x, int y, int z);
 t_fdf	*ft_new_node(int x, int y, int z, int color);

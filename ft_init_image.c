@@ -12,21 +12,13 @@
 
 #include "ft_fdf.h"
 
-void    ft_i_put_pixel(char **data, int color, unsigned char opacity)
-{
-	**data = color;
-	*(*data + 1) = color >> 8;
-	*(*data + 2) = color >> 16;
-	*(*data + 3) = opacity;
-}
-
 int		ft_image(t_root *root)
 {
 	int		bpp;
-	int		endian;
+	int		en;
 	
 	root->img = mlx_new_image(root->init, root->w_w + 100, root->w_w + 100);
-	root->i_data = mlx_get_data_addr(root->img, &bpp, &root->sl, &endian);
+	root->i_data = mlx_get_data_addr(root->img, &bpp, &root->size_line, &en);
 	
 }
 
