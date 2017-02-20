@@ -57,6 +57,7 @@ typedef	 struct		s_ld
 	int		err;
 	int		t_err;
 	int		t_x0;
+	int		cl;
 	char	*t_i_data;
 }					t_ld;
 
@@ -70,7 +71,8 @@ int		ft_key_hook(int keycode, t_root *root);
 void	ft_get_pixel_pos(int x, int y, t_root *root);
 void	ft_x_move(t_root *root, t_ld *ld);
 void	ft_y_move(t_root *root, t_ld *ld);
-void	ft_change_data(t_root *root, t_fdf *p_start, t_fdf *p_end);*/
+void	ft_change_data(t_root *root, t_fdf *p_start, t_fdf *p_end);
+int		ft_gradient(int cl_str, int cl_end, t_ld *ld)*/
 /* ft_s_fdf.c */
 void	ft_mod_cord(t_fdf *node, int x, int y, int z);
 t_fdf	*ft_new_node(int x, int y, int z, int color);

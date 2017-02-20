@@ -6,7 +6,7 @@
 /*   By: vpopovyc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 11:04:12 by vpopovyc          #+#    #+#             */
-/*   Updated: 2017/02/16 21:08:57 by vpopovyc         ###   ########.fr       */
+/*   Updated: 2017/02/20 17:05:11 by vpopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
 
 int		ft_get_color(int c0, int c1, int n, int x)
 {
+	printf("n: %i      x: %i\n", x, n);
+	x = x != 1 ? --x : x;
+	printf("n: %i      x: %i\n", x, n);
 	unsigned char	b1_b = c0;
 	unsigned char	b1_g = c0 >> 8;
 	unsigned char	b1_r= c0 >> 16;
@@ -54,11 +57,12 @@ int		ft_get_color(int c0, int c1, int n, int x)
 	printf("b3_0: %i\n", b3_b);
 	printf("b3_1: %i\n", b3_g);
 	printf("b3_2: %i\n", b3_r);
-	
+
+
 	int		res = 0;
-	res += b3_b;
-	res += (int)(b3_g << 8);
-	res += (int)(b3_r << 16);
+	res += (b1_b - (b1_b - b2_b) * n / x);
+	res += (int)((b1_g - (b1_g - b2_g) * n / x) << 8);
+	res += (int)((b1_r - (b1_r - b2_r) * n / x) << 16);
 	/*res |= (res << 8 | b3_r); 
 	res |= (res << 16 | b3_g);
 	res |= (res << 24 | b3_b);*/
@@ -70,30 +74,32 @@ int		ft_get_color(int c0, int c1, int n, int x)
 void    ft_change_data(char **data, int sl)
 {
 	int color_0 = 0xffffff;
-	int	color_1 = 0x000000;
-    int x0 = 1;
-    int y0 = 1;
-    int x1 = 200;
-    int y1 = 300;
+	int	color_1 = 0x820202;
+    int x0 = 0;
+    int y0 = 0;
+    int x1 = 5;
+    int y1 = 5;
     int sx = x0 < x1 ? 1 : -1;
     int sy = y0 < y1 ? 1 : -1;
     int     dx = abs(x1 - x0);
     int     dy = abs(y1 - y0);
+	int		x = dy > dx ? dy : dx;
     int     err = dx - dy;
     int     t_err;
     int     x2;
     int     ed = dx + dy == 0 ? 1 : sqrtf(pow(dx, 2) + pow(dy, 2));
     char    *tmp = *data;
-	int change = ft_get_color(color_0, color_1, x0, x1);
-	int n = 1;
+	int		n = 0;
+	int change /*= ft_get_color(color_0, color_1, 0, dx)*/;
 	
-    while (x0 <= x1 || y0 <= y1)
+	
+    while (x0 != x1 || y0 != y1)
     {
-		change = ft_get_color(color_0, color_1, x0, x1);
         *data = tmp;
         ft_get_pixel_pos(x0, y0, data, sl);
-        ft_i_put_pixel(data, change, 255*abs(err - dx + dy) / ed);
-        t_err = err;
+		change = ft_get_color(color_0, color_1, n, x);
+		ft_i_put_pixel(data, change, 255*abs(err - dx + dy) / ed);
+		t_err = err;
         x2 = x0;
         if (2 * t_err >= -dx)
         {
@@ -105,7 +111,8 @@ void    ft_change_data(char **data, int sl)
             }
             err -= dy;
             x0 += sx;
-        }
+			x == dx ? n++ : 0;
+		}
         if (2 * t_err <= dy)
         {
             if (dx - t_err < ed)
@@ -116,6 +123,7 @@ void    ft_change_data(char **data, int sl)
             }
             err += dx;
             y0 += sy;
+			x == dy ? n++ : 0;
         }
     }
 }
