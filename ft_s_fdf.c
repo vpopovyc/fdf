@@ -45,6 +45,25 @@ void    ft_get_root(int def_color, int err_color, t_root *new)
     new->status = 0;
 	new->w_h = 400;
 	new->w_w = 400;
+	new->mult = 50;
+}
+
+void	ft_get_ld(t_ld *ld, t_fdf *p_start, t_fdf *p_end, t_root *root)
+{
+	ld->x0 = p_start->c_x * root->mult;
+	ld->y0 = p_start->c_y * root->mult;
+	ld->x1 = p_end->c_x * root->mult;
+	ld->y1 = p_end->c_y * root->mult;
+	ld->sx = ld->x0 < ld->x1 ? 1 : -1;
+	ld->sy = ld->y0 < ld->y1 ? 1 : -1;
+	ld->dx = abs(ld->x1 - ld->x0);
+	ld->dy = abs(ld->y1 - ld->y0);
+	ld->de = ld->dx + ld->dy == 0 ? 1 : sqrt(ld->dx * ld->dx + ld->dy * ld->dy);
+	ld->err = ld->dx - ld->dy;
+	ld->t_i_data = root->i_data;
+	ld->cl_min = 0;
+	ld->cl_max = ld->dx >= ld->dy ? ld->dx : ld->dy;
+	
 }
 
 t_fdf	*ft_new_node(int y, int x, int z, int color)

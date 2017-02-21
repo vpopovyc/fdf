@@ -12,6 +12,33 @@
 
 #include "ft_fdf.h"
 
+void	ft_rec(t_root *root, t_fdf *head, t_fdf *draw)
+{
+	if (draw->right != NULL && draw->down != NULL && draw->diag != NULL)
+		return ;
+	if (draw->right != NULL)
+		ft_rec(root, head, draw->right);
+	else if (draw->right == NULL && draw->down != NULL)
+		ft_rec(root, head->down, head->down);
+	if (draw->right != NULL)
+		ft_change_data(root, draw, draw->right);
+	if (draw->down != NULL)
+		ft_change_data(root, draw, draw->down);
+	if (draw->diag != NULL)
+		ft_change_data(root, draw, draw->diag);
+}
+
+void	ft_fill_image(t_root *root)
+{
+	t_fdf	*head;
+	t_fdf	*draw;
+	
+	head = root->head;
+	draw = head;
+	if (draw != NULL)
+		ft_rec(root, head, draw);
+}
+
 int		ft_image(t_root *root)
 {
 	int		bpp;
@@ -19,7 +46,10 @@ int		ft_image(t_root *root)
 	
 	root->img = mlx_new_image(root->init, root->w_w + 100, root->w_w + 100);
 	root->i_data = mlx_get_data_addr(root->img, &bpp, &root->size_line, &en);
-	
+	ft_fill_image(root);
+	printf("here\n");
+	mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
+	return (1);
 }
 
 int		ft_key_hook(int keycode, t_root *root)

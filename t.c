@@ -36,54 +36,63 @@ void    ft_get_pixel_pos(int x, int y, char **data, int sl)
 
 int		ft_get_color(int c0, int c1, int n, int x)
 {
-	printf("n: %i      x: %i\n", x, n);
-	x = x != 1 ? --x : x;
-	printf("n: %i      x: %i\n", x, n);
-	unsigned char	b1_b = c0;
-	unsigned char	b1_g = c0 >> 8;
-	unsigned char	b1_r= c0 >> 16;
-	printf("b1_0: %i\n", b1_b);
-	printf("b1_1: %i\n", b1_g);
-	printf("b1_2: %i\n", b1_r);
-	unsigned char	b2_b = c1;
-	unsigned char	b2_g = c1 >> 8;
-	unsigned char	b2_r = c1 >> 16;
-	printf("* b2_0: %i\n", b2_b);
-	printf("* b2_1: %i\n", b2_g);
-	printf("* b2_2: %i\n", b2_r);
-	unsigned char	b3_b = (b1_b - (b1_b - b2_b) * n / x);
-	unsigned char	b3_g = (b1_g - (b1_g - b2_g) * n / x);
-	unsigned char	b3_r = (b1_r - (b1_r - b2_r) * n / x);
-	printf("b3_0: %i\n", b3_b);
-	printf("b3_1: %i\n", b3_g);
-	printf("b3_2: %i\n", b3_r);
-
-
-	int		res = 0;
-	res += (b1_b - (b1_b - b2_b) * n / x);
-	res += (int)((b1_g - (b1_g - b2_g) * n / x) << 8);
-	res += (int)((b1_r - (b1_r - b2_r) * n / x) << 16);
-	/*res |= (res << 8 | b3_r); 
-	res |= (res << 16 | b3_g);
-	res |= (res << 24 | b3_b);*/
-	printf ("res in hex %x\n\n\n\n", res);
+	static unsigned char	bt[7];
+	static short			lt[3];
+	static int				max;
+	int						res;
+	
+	if (n == 0)
+	{
+		bt[0] = c0;
+		bt[1] = c0 >> 8;
+		bt[2] = c0 >> 16;
+		bt[3] = c1;
+		bt[4] = c1 >> 8;
+		bt[5] = c1 >> 16;
+		lt[0] = bt[0] - bt[3];
+		lt[1] = bt[1] - bt[4];
+		lt[2] = bt[2] - bt[5];
+		max = x != 1 ? x - 1 : x;
+	}
+	res = 0;
+	res += (bt[0] - lt[0] * n / max);
+	res += (int)((bt[1] - lt[1] * n / max) << 8);
+	res += (int)((bt[2] - lt[2] * n / max) << 16);
 	return (res);
 }
 
 /* Xiaolin Wu's line algo */
 void    ft_change_data(char **data, int sl)
 {
-	int color_0 = 0xffffff;
-	int	color_1 = 0x820202;
-    int x0 = 0;
+	int color_0 = 0x820202;
+	int	color_1 = 0xffffff;
+
+	int x0 = 0;
     int y0 = 0;
-    int x1 = 5;
-    int y1 = 5;
-    int sx = x0 < x1 ? 1 : -1;
+    int x1 = 200;
+    int y1 = 200;
+
+/*
+	int x0 = 10;
+	int y0 = 10;
+	int x1 = 300;
+	int y1 = 10;
+*/
+/*
+	int x0 = 10;
+	int y0 = 10;
+	int x1 = 300;
+	int y1 = 300;
+*/
+	int sx = x0 < x1 ? 1 : -1;
     int sy = y0 < y1 ? 1 : -1;
     int     dx = abs(x1 - x0);
     int     dy = abs(y1 - y0);
-	int		x = dy > dx ? dy : dx;
+	int x;
+	if (dy > dx)
+		x = dy;
+	if (dx >= dy)
+		x = dx;
     int     err = dx - dy;
     int     t_err;
     int     x2;
@@ -101,7 +110,7 @@ void    ft_change_data(char **data, int sl)
 		ft_i_put_pixel(data, change, 255*abs(err - dx + dy) / ed);
 		t_err = err;
         x2 = x0;
-        if (2 * t_err >= -dx)
+        if (t_err << 1 >= -dx)
         {
             if (t_err + dy < ed)
             {
@@ -111,9 +120,9 @@ void    ft_change_data(char **data, int sl)
             }
             err -= dy;
             x0 += sx;
-			x == dx ? n++ : 0;
+			
 		}
-        if (2 * t_err <= dy)
+        if (t_err << 1 <= dy)
         {
             if (dx - t_err < ed)
             {
@@ -123,8 +132,8 @@ void    ft_change_data(char **data, int sl)
             }
             err += dx;
             y0 += sy;
-			x == dy ? n++ : 0;
         }
+		++n;
     }
 }
 

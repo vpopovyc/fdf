@@ -18,7 +18,7 @@ int		main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		ft_get_root(0, 1, &root);
+		ft_get_root(0xffffff, 0xffffff, &root);
 		if (ft_parse(open(*(++av), O_RDONLY), &root))
 		{
 			if (root.status & 0x80)

@@ -40,6 +40,7 @@ typedef	 struct		s_root
 	int				size_line;
 	int				w_h;
 	int				w_w;
+	int				mult;
 	struct s_fdf	*head;
 }					t_root;
 
@@ -58,6 +59,8 @@ typedef	 struct		s_ld
 	int		t_err;
 	int		t_x0;
 	int		cl;
+	int		cl_min;
+	int		cl_max;
 	char	*t_i_data;
 }					t_ld;
 
@@ -65,19 +68,23 @@ typedef	 struct		s_ld
 /* ft_init_image.c */
 int		ft_image(t_root *root);
 int		ft_init_image(t_root *root);
+void	ft_fill_image(t_root *root);
 int		ft_key_hook(int keycode, t_root *root);
+void	ft_rec(t_root *root, t_fdf *head, t_fdf *draw);
 /* ft_drawAAline.c */
-/*void	ft_i_put_pixel(t_root *root, int color, unsigned char opacity);
+void	ft_i_put_pixel(t_root *root, int color, unsigned char opacity);
 void	ft_get_pixel_pos(int x, int y, t_root *root);
 void	ft_x_move(t_root *root, t_ld *ld);
 void	ft_y_move(t_root *root, t_ld *ld);
 void	ft_change_data(t_root *root, t_fdf *p_start, t_fdf *p_end);
-int		ft_gradient(int cl_str, int cl_end, t_ld *ld)*/
+/* ft_gradient.c */
+int		ft_gradient(int cl_str, int cl_end, t_ld *ld);
 /* ft_s_fdf.c */
 void	ft_mod_cord(t_fdf *node, int x, int y, int z);
 t_fdf	*ft_new_node(int x, int y, int z, int color);
 void	ft_merge(t_fdf **up, t_fdf **down);
 void	ft_get_root(int def_color, int err_color, t_root *new);
+void	ft_get_ld(t_ld *ld, t_fdf *p_start, t_fdf *p_end, t_root *root);
 /* ft_parse.c */
 void	ft_diagonal(t_root *root);
 void    ft_color(t_root *root, char **line, t_fdf **node);
