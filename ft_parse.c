@@ -39,7 +39,7 @@ void		ft_diagonal(t_root *root)
 	ft_printf("added diagonal connection\n"); /* don't forget to delete */
 }
 
-void		ft_spc(size_t *x, char *f, t_fdf **head, t_fdf **node)
+void		ft_spc(int *x, char *f, t_fdf **head, t_fdf **node)
 {
 	static	t_fdf	*tmp;
 	
@@ -89,14 +89,14 @@ t_fdf		*ft_loop(char *line, int n, t_root *root)
 {
 	t_fdf			*node;
 	t_fdf			*head;
-	size_t			x;
+	int				x;
 	char			f;
 
 	x = 0;
 	f = 0;
 	node = NULL;
 	head = NULL;
-	while (*line != '\0' && (n == 0 || (n > 0 && x < root->matrix_size)))
+	while (*line != '\0' && (n == 0 || (n > 0 && x < root->x_max)))
 	{
 		if ((ft_isdigit(*line) || ft_issign(*line)) && !f && node == NULL)
 		{
@@ -108,8 +108,8 @@ t_fdf		*ft_loop(char *line, int n, t_root *root)
 		++line;
 	}
     f == 1 ? ft_spc(&x, &f, &head, &node) : 0;
-	n > 0 && x < root->matrix_size ? root->status |= 0x40 : 0;
-	n == 0 ? root->matrix_size = x : 0;
+	n > 0 && x < root->x_max ? root->status |= 0x40 : 0;
+	n == 0 ? root->x_max = x : 0;
 	return (head);
 }
 
@@ -135,5 +135,6 @@ int			ft_parse(int	fd, t_root *root)
 		up = down;
 		free(line);
 	}
+	root->y_max = n;
 	return (1);
 }

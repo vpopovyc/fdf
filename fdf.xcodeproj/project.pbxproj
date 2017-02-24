@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		974A47B21E59EEE600F9308D /* ft_drawAAline.c in Sources */ = {isa = PBXBuildFile; fileRef = 974A47B11E59EEE600F9308D /* ft_drawAAline.c */; };
+		975C9B2E1E5D901F0091618D /* libft.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975C9B2C1E5D900E0091618D /* libft.a */; };
+		975C9B301E5F11DE0091618D /* ft_drawpixel.c in Sources */ = {isa = PBXBuildFile; fileRef = 975C9B2F1E5F11DE0091618D /* ft_drawpixel.c */; };
 		9771C5D91E5CB74E00CA57A5 /* ft_gradient.c in Sources */ = {isa = PBXBuildFile; fileRef = 9771C5D81E5CB74E00CA57A5 /* ft_gradient.c */; };
 		97797B4B1E56FF7C005F95C0 /* ft_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 97829C6C1E5085F300590DD2 /* ft_parse.c */; };
 		97797B4C1E56FF7C005F95C0 /* ft_s_fdf.c in Sources */ = {isa = PBXBuildFile; fileRef = 97829C6D1E5085F300590DD2 /* ft_s_fdf.c */; };
 		97797B4D1E56FF7C005F95C0 /* ft_init_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 97F58D621E56634600D0CB72 /* ft_init_image.c */; };
 		97797B4E1E56FF7C005F95C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 97829C6A1E5085CD00590DD2 /* main.c */; };
-		97797B501E56FFAC005F95C0 /* libft.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97797B481E56FF45005F95C0 /* libft.a */; };
 		97797B521E56FFC3005F95C0 /* libmlx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97797B511E56FFC3005F95C0 /* libmlx.a */; };
 		97797B541E56FFD3005F95C0 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97797B531E56FFD3005F95C0 /* AppKit.framework */; };
 		97797B561E56FFDD005F95C0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97797B551E56FFDD005F95C0 /* OpenGL.framework */; };
@@ -34,6 +35,9 @@
 /* Begin PBXFileReference section */
 		973185521E5886230057E60B /* ft_issign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_issign.c; path = libft/ft_issign.c; sourceTree = "<group>"; };
 		974A47B11E59EEE600F9308D /* ft_drawAAline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_drawAAline.c; sourceTree = "<group>"; };
+		975C9B2C1E5D900E0091618D /* libft.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libft.a; path = libft/libft.a; sourceTree = "<group>"; };
+		975C9B2F1E5F11DE0091618D /* ft_drawpixel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_drawpixel.c; sourceTree = "<group>"; };
+		975C9B4C1E602CF50091618D /* toto.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = toto.txt; path = "../Library/Developer/Xcode/DerivedData/fdf-dsyycqogrfevdeggkmknnocbfewp/Build/Products/Debug/toto.txt"; sourceTree = "<group>"; };
 		9771C5D81E5CB74E00CA57A5 /* ft_gradient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_gradient.c; sourceTree = "<group>"; };
 		97797A871E56FF18005F95C0 /* format.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = format.c; path = libft/format.c; sourceTree = "<group>"; };
 		97797A881E56FF18005F95C0 /* ft_atoi_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ft_atoi_base.c; path = libft/ft_atoi_base.c; sourceTree = "<group>"; };
@@ -132,7 +136,6 @@
 		97797B431E56FF2D005F95C0 /* ft_printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ft_printf.h; path = libft/includes/ft_printf.h; sourceTree = "<group>"; };
 		97797B441E56FF2D005F95C0 /* get_next_line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = get_next_line.h; path = libft/includes/get_next_line.h; sourceTree = "<group>"; };
 		97797B451E56FF2D005F95C0 /* libft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libft.h; path = libft/includes/libft.h; sourceTree = "<group>"; };
-		97797B481E56FF45005F95C0 /* libft.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libft.a; path = libft/libft.a; sourceTree = "<group>"; };
 		97797B511E56FFC3005F95C0 /* libmlx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmlx.a; path = minilibx/libmlx.a; sourceTree = SOURCE_ROOT; };
 		97797B531E56FFD3005F95C0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		97797B551E56FFDD005F95C0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -152,7 +155,6 @@
 		97829C6C1E5085F300590DD2 /* ft_parse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ft_parse.c; sourceTree = "<group>"; usesTabs = 1; };
 		97829C6D1E5085F300590DD2 /* ft_s_fdf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ft_s_fdf.c; sourceTree = "<group>"; usesTabs = 1; };
 		97829D341E50875F00590DD2 /* ft_fdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ft_fdf.h; sourceTree = "<group>"; usesTabs = 1; };
-		97829D351E508A2700590DD2 /* toto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toto.txt; sourceTree = "<group>"; };
 		97F58D621E56634600D0CB72 /* ft_init_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ft_init_image.c; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
@@ -161,10 +163,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975C9B2E1E5D901F0091618D /* libft.a in Frameworks */,
 				97797B561E56FFDD005F95C0 /* OpenGL.framework in Frameworks */,
 				97797B541E56FFD3005F95C0 /* AppKit.framework in Frameworks */,
 				97797B521E56FFC3005F95C0 /* libmlx.a in Frameworks */,
-				97797B501E56FFAC005F95C0 /* libft.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +176,7 @@
 		97797A831E56FECE005F95C0 /* libft */ = {
 			isa = PBXGroup;
 			children = (
-				97797B481E56FF45005F95C0 /* libft.a */,
+				975C9B2C1E5D900E0091618D /* libft.a */,
 				97797A851E56FEE9005F95C0 /* includes */,
 				97797A841E56FED7005F95C0 /* sources */,
 			);
@@ -331,7 +333,7 @@
 		97829C561E5084E500590DD2 = {
 			isa = PBXGroup;
 			children = (
-				97829D351E508A2700590DD2 /* toto.txt */,
+				975C9B2F1E5F11DE0091618D /* ft_drawpixel.c */,
 				974A47B11E59EEE600F9308D /* ft_drawAAline.c */,
 				97829D341E50875F00590DD2 /* ft_fdf.h */,
 				9771C5D81E5CB74E00CA57A5 /* ft_gradient.c */,
@@ -339,6 +341,7 @@
 				97829C6D1E5085F300590DD2 /* ft_s_fdf.c */,
 				97F58D621E56634600D0CB72 /* ft_init_image.c */,
 				97829C6A1E5085CD00590DD2 /* main.c */,
+				975C9B4C1E602CF50091618D /* toto.txt */,
 				97829C601E5084E500590DD2 /* Products */,
 				97829C701E50861800590DD2 /* Frameworks */,
 			);
@@ -425,6 +428,7 @@
 				9771C5D91E5CB74E00CA57A5 /* ft_gradient.c in Sources */,
 				97797B4B1E56FF7C005F95C0 /* ft_parse.c in Sources */,
 				97797B4C1E56FF7C005F95C0 /* ft_s_fdf.c in Sources */,
+				975C9B301E5F11DE0091618D /* ft_drawpixel.c in Sources */,
 				97797B4D1E56FF7C005F95C0 /* ft_init_image.c in Sources */,
 				97797B4E1E56FF7C005F95C0 /* main.c in Sources */,
 			);
@@ -473,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -514,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -530,7 +534,7 @@
 					/opt/X11/lib,
 					"$(PROJECT_DIR)/minilibx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -545,7 +549,7 @@
 					/opt/X11/lib,
 					"$(PROJECT_DIR)/minilibx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

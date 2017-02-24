@@ -41,24 +41,28 @@ void    ft_get_root(int def_color, int err_color, t_root *new)
     new->def_color = def_color;
     new->err_color = err_color;
     new->head = NULL;
-    new->matrix_size = 0;
+    new->x_max = 0;
     new->status = 0;
 	new->w_h = 400;
 	new->w_w = 400;
-	new->mult = 50;
+	new->mult = 1;
+	new->move_d = 0;
+	new->move_u = 0;
+	new->move_l = 0;
+	new->move_r = 0;
 }
 
 void	ft_get_ld(t_ld *ld, t_fdf *p_start, t_fdf *p_end, t_root *root)
 {
-	ld->x0 = p_start->c_x * root->mult;
-	ld->y0 = p_start->c_y * root->mult;
-	ld->x1 = p_end->c_x * root->mult;
-	ld->y1 = p_end->c_y * root->mult;
+	ld->x0 = ((p_start->c_x - root->x_md) * root->mult) + root->move_r - root->move_l;
+	ld->y0 = ((p_start->c_y - root->y_md) * root->mult) + root->move_u - root->move_d;
+	ld->x1 = ((p_end->c_x - root->x_md) * root->mult) + root->move_r - root->move_l;
+	ld->y1 = ((p_end->c_y - root->y_md) * root->mult) + root->move_u - root->move_d;
 	ld->sx = ld->x0 < ld->x1 ? 1 : -1;
 	ld->sy = ld->y0 < ld->y1 ? 1 : -1;
 	ld->dx = abs(ld->x1 - ld->x0);
 	ld->dy = abs(ld->y1 - ld->y0);
-	ld->de = ld->dx + ld->dy == 0 ? 1 : sqrt(ld->dx * ld->dx + ld->dy * ld->dy);
+	ld->de = ld->dx + ld->dy == 0 ? 1 : sqrtf(ld->dx * ld->dx + ld->dy * ld->dy);
 	ld->err = ld->dx - ld->dy;
 	ld->t_i_data = root->i_data;
 	ld->cl_min = 0;

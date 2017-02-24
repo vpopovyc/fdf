@@ -69,8 +69,8 @@ void    ft_change_data(char **data, int sl)
 
 	int x0 = 0;
     int y0 = 0;
-    int x1 = 200;
-    int y1 = 200;
+    int x1 = 1;
+    int y1 = 1;
 
 /*
 	int x0 = 10;

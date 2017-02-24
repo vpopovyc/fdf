@@ -31,7 +31,8 @@ typedef	 struct		s_root
 {
 	int				def_color;
 	int				err_color;
-	size_t			matrix_size;
+	int				y_max;
+	int 			x_max;
 	unsigned char	status;
 	void			*init;
 	void			*win;
@@ -41,6 +42,12 @@ typedef	 struct		s_root
 	int				w_h;
 	int				w_w;
 	int				mult;
+	int				x_md;
+	int				y_md;
+	int				move_u;
+	int				move_d;
+	int				move_r;
+	int				move_l;
 	struct s_fdf	*head;
 }					t_root;
 
@@ -65,6 +72,8 @@ typedef	 struct		s_ld
 }					t_ld;
 
 # define BS 8
+/* ft_drawpixel.c */
+void    ft_drawpixel(t_root *root, t_fdf *pixel);
 /* ft_init_image.c */
 int		ft_image(t_root *root);
 int		ft_init_image(t_root *root);
@@ -89,7 +98,7 @@ void	ft_get_ld(t_ld *ld, t_fdf *p_start, t_fdf *p_end, t_root *root);
 void	ft_diagonal(t_root *root);
 void    ft_color(t_root *root, char **line, t_fdf **node);
 t_fdf	*ft_loop(char *line, int n, t_root *root);
-void	ft_spc(size_t *y, char *f, t_fdf **head, t_fdf **node);
+void	ft_spc(int *x, char *f, t_fdf **head, t_fdf **node);
 int		ft_parse(int fd, t_root *root);
 #endif
 
