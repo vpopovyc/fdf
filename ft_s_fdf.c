@@ -43,8 +43,8 @@ void	ft_get_root(int def_color, int err_color, t_root *new)
 	new->head = NULL;
 	new->x_max = 0;
 	new->status = 0;
-	new->w_h = 400;
-	new->w_w = 400;
+	new->w_h = 1000;
+	new->w_w = 1500;
 	new->mult = 1;
 	new->move_d = 0;
 	new->move_u = 0;

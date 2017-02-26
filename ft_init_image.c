@@ -46,7 +46,7 @@ int		ft_image(t_root *root)
 	int		bpp;
 	int		en;
 
-	root->img = mlx_new_image(root->init, root->w_w, root->w_w);
+	root->img = mlx_new_image(root->init, root->w_w,  root->w_h);
 	root->i_data = mlx_get_data_addr(root->img, &bpp, &root->size_line, &en);
 	ft_fill_image(root);
 	return (1);
@@ -68,7 +68,7 @@ int		ft_init_image(t_root *root)
 	root->init = mlx_init();
 	if (root->init == NULL)
 		exit(ft_printf("Couldn't establish connection\n"));
-	root->win = mlx_new_window(root->init, root->w_h, root->w_w, "fil de fer");
+	root->win = mlx_new_window(root->init, root->w_w, root->w_h, "fil de fer");
 	if (root->win == NULL)
 		exit(ft_printf("Couldn't create window\n"));
 	mlx_hook(root->win, 2, 5, ft_key_hook, root);

@@ -29,7 +29,7 @@ void	ft_keycode_angle(int keycode, t_root *root)
 	mlx_destroy_image(root->init, root->img);
 	ft_image(root);
 	mlx_clear_window(root->init, root->win);
-	mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
+	mlx_put_image_to_window(root->init, root->win, root->img, -1, 0);
 }
 
 void	ft_keycode_moves(int keycode, t_root *root)
@@ -45,19 +45,19 @@ void	ft_keycode_moves(int keycode, t_root *root)
 	mlx_destroy_image(root->init, root->img);
 	ft_image(root);
 	mlx_clear_window(root->init, root->win);
-	mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
+	mlx_put_image_to_window(root->init, root->win, root->img, -1, 0);
 }
 
 void	ft_multiply(t_root *root, int keycode)
 {
 	if (keycode == 24)
-		root->mult = root->mult + 10;
+		root->mult = root->mult + 10 > 800 ? root->mult : root->mult + 10;
 	else if (keycode == 27)
 		root->mult = root->mult - 10 < 0 ? 1 : root->mult - 10;
 	mlx_destroy_image(root->init, root->img);
 	ft_image(root);
 	mlx_clear_window(root->init, root->win);
-	mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
+	mlx_put_image_to_window(root->init, root->win, root->img, -1, 0);
 }
 
 void	ft_kittens_killa(t_root *root)
@@ -81,7 +81,7 @@ void	ft_matrix_control(int keycode, t_root *root)
 	if (keycode == 34)
 	{
 		ft_image(root);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
+		mlx_put_image_to_window(root->init, root->win, root->img, -1, 0);
 	}
 	if (keycode == 2)
 		ft_kittens_killa(root);

@@ -22,7 +22,7 @@ void	ft_i_put_pixel(t_root *root, int color, unsigned char opacity)
 
 void	ft_get_pixel_pos(int x, int y, t_root *root)
 {
-	if (x * 4 > root->size_line || y > root->w_h || x <= 0 || y <= 0)
+	if (x * 4 >= root->size_line || y >= root->w_h || x <= 0 || y <= 0)
 		return ;
 	root->i_data += (y * root->size_line) + (x * 4);
 }
