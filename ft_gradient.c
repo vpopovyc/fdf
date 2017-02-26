@@ -18,7 +18,7 @@ int		ft_gradient(int cl_str, int cl_end, t_ld *ld)
 	static unsigned char	bt[7];
 	static short			lt[3];
 	static int				max;
-	
+
 	if (ld->cl_min == 0)
 	{
 		bt[0] = cl_str;
@@ -30,7 +30,7 @@ int		ft_gradient(int cl_str, int cl_end, t_ld *ld)
 		lt[0] = bt[0] - bt[3];
 		lt[1] = bt[1] - bt[4];
 		lt[2] = bt[2] - bt[5];
-		max = ld->cl_max != 1 ? ld->cl_max - 1: ld->cl_max;
+		max = ld->cl_max != 1 ? ld->cl_max - 1 : ld->cl_max;
 	}
 	res = 0;
 	res += (bt[0] - lt[0] * ld->cl_min / max);

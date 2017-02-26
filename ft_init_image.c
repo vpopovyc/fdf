@@ -32,9 +32,11 @@ void	ft_fill_image(t_root *root)
 {
 	t_fdf	*head;
 	t_fdf	*draw;
-	
+
 	head = root->head;
 	draw = head;
+	root->x_md = (root->x_max + root->head->c_x) / 2;
+	root->y_md = (root->y_max + root->head->c_y) / 2;
 	if (draw != NULL)
 		ft_rec(root, head, draw);
 }
@@ -43,78 +45,21 @@ int		ft_image(t_root *root)
 {
 	int		bpp;
 	int		en;
-	
+
 	root->img = mlx_new_image(root->init, root->w_w, root->w_w);
 	root->i_data = mlx_get_data_addr(root->img, &bpp, &root->size_line, &en);
 	ft_fill_image(root);
-	printf("here\n");
 	return (1);
 }
 
-int		ft_key_hook(int keycode, t_root *root)
+int		ft_key_hook(int kc, t_root *root)
 {
-	ft_printf("keycode: %d\n", keycode);
-	if (keycode == 53 || keycode == 49)
-		exit(ft_printf("Kill pid\n"));
-	if (keycode == 34)
-	{
-		ft_image(root);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 2)
-	{
-		mlx_destroy_image(root->init, root->img);
-		mlx_clear_window(root->init, root->win);
-	}
-	if (keycode == 24)
-	{
-		root->mult = root->mult + 10;
-		mlx_destroy_image(root->init, root->img);
-		mlx_clear_window(root->init, root->win);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 27)
-	{
-		root->mult = root->mult - 10;
-		mlx_destroy_image(root->init, root->img);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 125)
-	{
-		root->move_u += 10;
-		mlx_destroy_image(root->init, root->img);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 126)
-	{
-		root->move_d += 10;
-		mlx_destroy_image(root->init, root->img);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 124)
-	{
-		root->move_r += 10;
-		mlx_destroy_image(root->init, root->img);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
-	if (keycode == 123)
-	{
-		root->move_l += 10;
-		mlx_destroy_image(root->init, root->img);
-		ft_image(root);
-		mlx_clear_window(root->init, root->win);
-		mlx_put_image_to_window(root->init, root->win, root->img, 0, 0);
-	}
+	if (kc == 53 || kc == 49 || kc == 34 || kc == 2 || kc == 24 || kc == 27)
+		ft_matrix_control(kc, root);
+	else if (kc == 125 || kc == 126 || kc == 124 || kc == 123)
+		ft_keycode_moves(kc, root);
+	else if (kc == 6 || kc == 7 || kc == 8 || kc == 9 || kc == 11 || kc == 45)
+		ft_keycode_angle(kc, root);
 	return (0);
 }
 
@@ -126,7 +71,7 @@ int		ft_init_image(t_root *root)
 	root->win = mlx_new_window(root->init, root->w_h, root->w_w, "fil de fer");
 	if (root->win == NULL)
 		exit(ft_printf("Couldn't create window\n"));
-	mlx_key_hook(root->win, ft_key_hook, root);
+	mlx_hook(root->win, 2, 5, ft_key_hook, root);
 	mlx_loop(root->init);
 	return (0);
 }
