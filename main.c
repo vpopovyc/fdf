@@ -25,9 +25,9 @@ int		main(int ac, char **av)
 				exit(ft_printf("Empty file\n"));
 			if (root.status & 0x2)
 				ft_diagonal(&root);
-			ft_printf("return: validated\n");
 		}
 		ft_init_image(&root);
 	}
-	return (ft_printf("return: main\n"));
+	else
+		return (ft_printf("usage: ./fdf sample.fdf\n"));
 }

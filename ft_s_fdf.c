@@ -53,6 +53,7 @@ void	ft_get_root(int def_color, int err_color, t_root *new)
 	new->x_an = 120;
 	new->y_an = 120;
 	new->z_an = 120;
+	new->display_diag = 0;
 }
 
 void	ft_get_ld(t_ld *ld, t_fdf *p_start, t_fdf *p_end, t_root *root)

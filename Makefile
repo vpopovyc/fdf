@@ -12,7 +12,8 @@
 
 NAME = fdf
 
-SRC = main.c ft_parse.c ft_s_fdf.c ft_gradient.c ft_init_image.c ft_drawAAline.c 
+SRC = main.c ft_parse.c ft_s_fdf.c ft_gradient.c ft_init_image.c \
+		ft_draw_aa_line.c ft_drawpixel.c ft_keycodes.c ft_modify_xyz.c 
 
 OBJ = $(SRC:.c=.o)
 
@@ -20,7 +21,7 @@ LIBOBJ = libft/*.o
 
 INC = -I ft_fdf.h
 
-CFLAGS = -c -Wall -Wextra  #-Werror
+CFLAGS = -c -Wall -Wextra -Werror
 
 LIBCR = make -C libft/
 

@@ -22,7 +22,7 @@ void	ft_rec(t_root *root, t_fdf *head, t_fdf *draw)
 		ft_rec(root, head->down, head->down);
 	if (draw->right != NULL)
 		ft_change_data(root, draw, draw->right);
-	if (draw->diag != NULL)
+	if (draw->diag != NULL && root->display_diag)
 		ft_change_data(root, draw, draw->diag);
 	if (draw->down != NULL)
 		ft_change_data(root, draw, draw->down);
@@ -56,7 +56,7 @@ int		ft_key_hook(int kc, t_root *root)
 {
 	if (kc == 53 || kc == 49 || kc == 34 || kc == 2 || kc == 24 || kc == 27)
 		ft_matrix_control(kc, root);
-	else if (kc == 125 || kc == 126 || kc == 124 || kc == 123)
+	else if (kc == 125 || kc == 126 || kc == 124 || kc == 123 || kc == 82)
 		ft_keycode_moves(kc, root);
 	else if (kc == 6 || kc == 7 || kc == 8 || kc == 9 || kc == 11 || kc == 45)
 		ft_keycode_angle(kc, root);

@@ -69,8 +69,32 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "toto.txt"
+            argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/julia.fdf"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/elem-fract.fdf"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/elem-col.fdf"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/mars.fdf"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/t1.fdf"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "jullia.fdf"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "toto.txt"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

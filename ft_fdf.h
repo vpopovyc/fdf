@@ -18,6 +18,7 @@
 # define M_PI_180 0.01745329251994
 # define BS 8
 
+
 typedef	struct		s_fdf
 {
 	int				c_x;
@@ -53,6 +54,7 @@ typedef	struct		s_root
 	int				x_an;
 	int				y_an;
 	int				z_an;
+	char			display_diag;
 	struct s_fdf	*head;
 }					t_root;
 
