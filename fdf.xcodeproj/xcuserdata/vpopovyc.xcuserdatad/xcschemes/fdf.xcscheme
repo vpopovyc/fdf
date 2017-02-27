@@ -74,7 +74,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/elem-fract.fdf"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/nfs/2016/v/vpopovyc/Library/Developer/Xcode/DerivedData/fdf-dvzjwkqvynigtjavhmdbysciwxtb/Build/Products/Debug/elem-col.fdf"
@@ -94,7 +94,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "toto.txt"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

@@ -60,6 +60,8 @@ int		ft_key_hook(int kc, t_root *root)
 		ft_keycode_moves(kc, root);
 	else if (kc == 6 || kc == 7 || kc == 8 || kc == 9 || kc == 11 || kc == 45)
 		ft_keycode_angle(kc, root);
+	else if (kc == 4)
+		ft_init_help(root);
 	return (0);
 }
 

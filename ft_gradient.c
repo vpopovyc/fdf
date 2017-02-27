@@ -38,3 +38,22 @@ int		ft_gradient(int cl_str, int cl_end, t_ld *ld)
 	res += (int)((bt[2] - lt[2] * ld->cl_min / max) << 16);
 	return (res);
 }
+
+void	ft_init_help(t_root *root)
+{
+	void	*win;
+	
+	win = mlx_new_window(root->init, 250, 250, "help");
+	mlx_string_put(root->init, win, 10, 0, 0xff0000, "'i' - create img");
+	mlx_string_put(root->init, win, 10, 20, 0xff0000, "'d' - delete image");
+	mlx_string_put(root->init, win, 10, 40, 0xff0000, "'-' - zoom out");
+	mlx_string_put(root->init, win, 10, 60, 0xff0000, "'+' - zoom in");
+	mlx_string_put(root->init, win, 10, 80, 0xff0000, "'z' - rotate x down");
+	mlx_string_put(root->init, win, 10, 100, 0xff0000, "'x' - rotate x up");
+	mlx_string_put(root->init, win, 10, 120, 0xff0000, "'c' - rotate y down");
+	mlx_string_put(root->init, win, 10, 140, 0xff0000, "'v' - rotate y up");
+	mlx_string_put(root->init, win, 10, 160, 0xff0000, "'b' - rotate z down");
+	mlx_string_put(root->init, win, 10, 180, 0xff0000, "'n' - rotate z down");
+	mlx_string_put(root->init, win, 10, 200, 0xff0000, "'0' add diag");
+	mlx_string_put(root->init, win, 10, 220, 0xff0000, "'space' - kill pid");
+}

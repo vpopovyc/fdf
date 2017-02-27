@@ -80,6 +80,7 @@ typedef	struct		s_ld
 	char	*t_i_data;
 }					t_ld;
 
+void				ft_init_help(t_root *root);
 void				ft_keycode_angle(int keycode, t_root *root);
 void				ft_keycode_moves(int keycode, t_root *root);
 void				ft_matrix_control(int keycode, t_root *root);

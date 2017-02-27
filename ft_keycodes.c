@@ -35,13 +35,13 @@ void	ft_keycode_angle(int keycode, t_root *root)
 void	ft_keycode_moves(int keycode, t_root *root)
 {
 	if (keycode == 125)
-		root->move_u += 10;
+		root->move_u += 5;
 	else if (keycode == 126)
-		root->move_d += 10;
+		root->move_d += 5;
 	else if (keycode == 124)
-		root->move_r += 10;
+		root->move_r += 5;
 	else if (keycode == 123)
-		root->move_l += 10;
+		root->move_l += 5;
 	else if (keycode == 82 && !root->display_diag)
 		root->display_diag = 1;
 	else if (keycode == 82 && root->display_diag)
@@ -55,9 +55,9 @@ void	ft_keycode_moves(int keycode, t_root *root)
 void	ft_multiply(t_root *root, int keycode)
 {
 	if (keycode == 24)
-		root->mult = root->mult + 10 > 800 ? root->mult : root->mult + 1;
+		root->mult = root->mult + 1 > 500 ? root->mult : root->mult + 1;
 	else if (keycode == 27)
-		root->mult = root->mult - 10 < 0 ? 1 : root->mult - 1;
+		root->mult = root->mult - 1 < 0 ? 1 : root->mult - 1;
 	mlx_destroy_image(root->init, root->img);
 	ft_image(root);
 	mlx_clear_window(root->init, root->win);

@@ -21,9 +21,11 @@ int		main(int ac, char **av)
 		ft_get_root(0xffffff, 0xffffff, &root);
 		if (ft_parse(open(*(++av), O_RDONLY), &root))
 		{
-			if (root.status & 0x80)
+			if (((root.status ^ 0x2) ^ 0x80) & 0x40)
+				exit(ft_printf("Invalid matrix\n"));
+			if (((root.status ^ 0x2 ) ^ 0x40) & 0x80)
 				exit(ft_printf("Empty file\n"));
-			if (root.status & 0x2)
+			if (((root.status ^ 0x40) ^ 0x80) & 0x2)
 				ft_diagonal(&root);
 		}
 		ft_init_image(&root);
